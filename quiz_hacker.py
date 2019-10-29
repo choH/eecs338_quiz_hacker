@@ -84,6 +84,7 @@ for a_q_line in q_line_list:
                 del line_answer_buffer[-1]
                 line_answer_buffer.append(filled_hypen_word)
                 print("Improved: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
+                # print("Improvement: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
 
 
     answer_buffer.append(' '.join(line_answer_buffer))
