@@ -1,93 +1,89 @@
-A ad_iss_on-control polic_
-A ave_ag_ queue length
-A _che_ule t_read_
-A noninteractive proce_ses
-A __ocess runnin_
-A _or_al priority class
-A priority-ba_ed algorithm
-A q___e leng_h
-A real-__m_ proces_
-A sc_edul__g polic_
-A scheduling _rio_i_y
-A thread p_ioriti__
-E di_patch __tency
-E _eal-time task_
-E event l_tenc_
-E f_r_t deadlin_
-E gl_b_l prior_t_
-E in_eractiv_ t__ead_
-E interrupt la_enc_
-E multip_e processors
-E no_mal prior_ty
-E periodic proce__
-E pro_ess_r aff_ni_y
-E pro_ess s_hedul__g
-E queue _cheduler
-E rate-monotonic schedulin_
-E sched_ling real-_ime threads
-E short p_oc_sse_
-E target__ latenc_
-E thre__ _ibrar_
-E user-_ev_l _hread_
-I equal p_iori__
-I fixe_ priorit_
-I long-_atency even_
-I memor_ sta__
-I pri_ate qu_u_
-I queue o_ eligibl_ processe_
-I real-_im_ system_
-I re_l-time sch_duling
-I rel_tive pr_o_i__
-I scheduli_g cla__
-I s_hedu_ing _vent
-I s__rter proc_sses
-I swit_hing between thr_ads
-I t_rea_ schedulin_
-O curren_ schedu_ing
-O _eadlin_ requirem_nts
-O _elative pr_orit_e_
-O _ernel-l_vel thr_ads
-O hardwa_e thread_
-O h__hest _riorit_
-O hig_er-pri_rity thread
-O lower p__ority
-O preemptive sche_uling
-O priority _e_el_
-O priori_y-based sche_u_ing
-O processes _rr_v_
-O pr_or_ty cla__
-O q_a_t_m expire_
-O real-_im_ clas_
-O rea__ queu_
-O re_l-time th__ad_
-O s_heduling _eadline_
-O thre_d creatio_
-O urge_c_ valu_
-U/Y avera_e waiti_g
-U/Y averag_ turnaroun_
-U/Y c_n_ention scop_
-U/Y cur__nt schedul_ng policy
-U/Y foreg_ou_d pro_es_
-U/Y globa_ pri_ritie_
-U/Y highe_-priority p_oces_
-U/Y higher prio_it_
-U/Y _hr_ad wa_tin_
-U/Y i_teract_v_ processes
-U/Y linux sche_u_er
-U/Y l_wer-priority thread
-U/Y l_wer-pri_rity proces_
-U/Y mu_tiple-processor schedulin_
-U/Y prior_ty _l_s_e_
-U/Y prio__ty queue
-U/Y pri_rity ra_g_
-U/Y propo_t_ona_ share
-U/Y rate-monotonic al_orith_
-U/Y respons_ __me_
-U/Y sched_l_ng rea_-tim_
-U/Y schedule_ s_lect_
-U/Y scheduli_g algorith_
-U/Y scheduling decis_on_
-U/Y sl_cing amo_g thre_d_
-U/Y static _r_or_ties
-U/Y time-sharing class
-U/Y t_reads of equ_l priorit_
+A b_ock numbe_
+A c_ntrol bl___
+A cons_stency checki_g
+A contig_ous all_cat_o_
+A director_ _ntr_e_
+A disk-h_ad se__s
+A _em_orary _cce__
+A fi_st _lock
+A in_er_al _ragmentatio_
+A _oun_ poin_
+A pat_-name _ra_slatio_
+A re_ative b_oc_
+A remote di_ector_
+A __scadin_ mount_
+A secon_ary s_or_g_
+A synchrono_s w_ite_
+A tree-structu_ed dir_ctorie_
+A unif_ed buffer _ac__
+A unused b_oc_
+A _urrent _irector_
+A u_u__d memor_
+E dire__ acc_s_
+E direct_ry _ntr_
+E __ffer cach_
+E file-orga_iz_tion module
+E file-syst_m metadat_
+E fr_e-block po_nter_
+E free-sp_ce managemen_
+E i_dex b__c_
+E ino_e blo__
+E linked a_loca_io_
+E _onsisten_y semantics
+E physi_al blo___
+E remote-file-system p_otoco_
+E se_ue_tial-_cce_s files
+E sh_red f_l__
+E sy_b_lic links
+E temperature _xtreme_
+E trans_er r_tes
+E write perm__sio_
+I access c_ntr__
+I c_ntiguous _pac_
+I directory str_ct___
+I i_o_e num_e_
+I metadata up_at_s
+I m_m__y mappin_
+I mounted direc__r_
+I multi_ev_l direct_r_
+I multilevel direc_ory struct___
+I phy__cal bloc_
+I p_otection mechani_ms
+I ra_dom access
+I __rbage coll_ctio_
+I __s_em fil__
+I sequential _ccess
+I singl_-leve_ dir_ctory
+I virtual memor_ tec_niques
+O _ab_e en_r_
+O access-cont_ol list_
+O cached a_trib_te_
+O _cce_s r__ht_
+O director_ structure_
+O __ee-sp_ce ma_age_
+O fi_e-system imple_entation
+O files and subdirect_ries
+O i_d__ed all_catio_
+O _llo_ation met_od_
+O logical recor_
+O sy_tem-wi_e open-file
+O tw_-_evel directory
+O u__ated _etad_t_
+O v_rtual _e_or_
+U/Y contiguous _hun_
+U/Y conti___us block_
+U/Y _eads and writes
+U/Y external fragme_tatio_
+U/Y files a__ directorie_
+U/Y file-_ystem int__face
+U/Y incr_me_tal backup
+U/Y logic_l records
+U/Y mount _p_rati_n
+U/Y __ndom wri_es
+U/Y __ode s_ructur_
+U/Y op_n-file table e_try
+U/Y relative bl_ck numb_r
+U/Y _rite p_int__
+U/Y ___tection schem_
+U/Y tree-structured d_r_ctory
+U/Y two-level dire__ory structure
