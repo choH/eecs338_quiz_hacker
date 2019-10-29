@@ -6,6 +6,15 @@ last_name_first_vowel = 'O'
 
 
 def OS_quiz_tokenizer(input_filename, vowel=None):
+    if vowel is not None:
+        vowel = vowel.upper()
+        vowel_list = ['A', 'E', 'I', 'O', 'U', 'Y']
+        if vowel not in vowel_list:
+            print("{} is not a proper vowel.".format(vowel))
+            return -1
+        if vowel in ['U', 'Y']:
+            vowel = 'U/Y'
+
     line_list = []
     word_list = []
     with open(input_filename) as input_file:
@@ -83,8 +92,17 @@ for a_q_line in q_line_list:
             if filled_hypen_word.count('_') < filled_word.count('_'):
                 del line_answer_buffer[-1]
                 line_answer_buffer.append(filled_hypen_word)
-                print("Improved: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
                 # print("Improvement: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
+            else:
+                if not filled_hypen_word == filled_word:
+                    del line_answer_buffer[-1]
+                    hypen_word_underline_index_list = [i for (i, x) in enumerate(filled_word) if x == '_']
+                    for i in hypen_word_underline_index_list:
+                        if filled_hypen_word[i] != '_':
+                            filled_word[i] =  filled_hypen_word[i]
+                    line_answer_buffer.append(filled_word)
+                    # print("Collation Improvement: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
+                # print("No Improvement: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
 
 
     answer_buffer.append(' '.join(line_answer_buffer))
