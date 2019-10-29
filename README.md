@@ -21,24 +21,19 @@ python3 quiz_hacker.py
 
 If everything works fine, you may expect an output like:
 ```
-         curren_ schedu_ing     -->     curren_ scheduling
-      _eadlin_ requirem_nts     -->     deadlin_ requirem_nts
-        _elative pr_orit_e_     -->     relative priorities
-       _ernel-l_vel thr_ads     -->     _ernel-l_vel threads
-           hardwa_e thread_     -->     hardwa_e threads
-           h__hest _riorit_     -->     h__hest priority
-     hig_er-pri_rity thread     -->     higher-priority thread
-             lower p__ority     -->     lower priority
-      preemptive sche_uling     -->     preemptive scheduling
-            priority _e_el_     -->     priority _e_el_
-  priori_y-based sche_u_ing     -->     priority-based scheduling
-           processes _rr_v_     -->     processes _rr_v_
-             pr_or_ty cla__     -->     priority class
-            q_a_t_m expire_     -->     q_a_t_m expire_
-            real-_im_ clas_     -->     real-time class
-                rea__ queu_     -->     reag_ queue
-          re_l-time th__ad_     -->     real-time threads
-       s_heduling _eadline_     -->     scheduling _eadlinee
-            thre_d creatio_     -->     thread creatio_
-              urge_c_ valu_     -->     urge_c_ valu_
+                   _ab_e en_r_     -->     table entry
+          access-cont_ol list_     -->     access-cont_ol lists
+             cached a_trib_te_     -->     cached a_trib_te_
+                 _cce_s r__ht_     -->     access r__ht_
+          director_ structure_     -->     directory structured
+            __ee-sp_ce ma_age_     -->     free-sp_ce ma_age_
+    fi_e-system imple_entation     -->     file-system imple_entation
+      files and subdirect_ries     -->     files and subdirect_ries
+            i_d__ed all_catio_     -->     i_d__ed alllcation
+            _llo_ation met_od_     -->     allocation met_od_
+                logical recor_     -->     logical recor_
+         sy_tem-wi_e open-file     -->     sy_tem-wi_e open-file
+           tw_-_evel directory     -->     two-level directory
+              u__ated _etad_t_     -->     u__ated metadata
+                v_rtual _e_or_     -->     virtual recor_
 ```
