@@ -13,7 +13,15 @@ def OS_quiz_tokenizer(input_filename, vowel=None):
             if i.split(' ')[0] == vowel or vowel == None:
                 line_list.append(i.split('\n')[0].split(' ', 1)[-1])
                 word_list.extend(i.split('\n')[0].split(' ', 1)[-1].split())
+
+    for i in word_list:
+        if '-' in i:
+            word_list.extend(i.split('-'))
+
+
     return line_list, word_list
+
+
 
 raw_line_list, raw_word_list = OS_quiz_tokenizer('input.txt')
 q_line_list, q_word_list = OS_quiz_tokenizer('input.txt', last_name_first_vowel)
