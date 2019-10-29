@@ -13,12 +13,9 @@ def OS_quiz_tokenizer(input_filename, vowel=None):
             if i.split(' ')[0] == vowel or vowel == None:
                 line_list.append(i.split('\n')[0].split(' ', 1)[-1])
                 word_list.extend(i.split('\n')[0].split(' ', 1)[-1].split())
-
     for i in word_list:
         if '-' in i:
             word_list.extend(i.split('-'))
-
-
     return line_list, word_list
 
 
@@ -74,6 +71,19 @@ for a_q_line in q_line_list:
     for a_q_word in a_q_word_list:
         filled_word = try_fill_word(a_q_word)
         line_answer_buffer.append(filled_word)
+
+        if '-' in filled_word and '_' in filled_word:
+            hypen_word_token_list = filled_word.split('-')
+            hypen_word_token_buffer = [];
+            for i in hypen_word_token_list:
+                filled_hypen_word_portion = try_fill_word(i)
+                hypen_word_token_buffer.append(filled_hypen_word_portion)
+            filled_hypen_word = "-".join(hypen_word_token_buffer)
+
+            if filled_hypen_word.count('_') < filled_word.count('_'):
+                del line_answer_buffer[-1]
+                line_answer_buffer.append(filled_hypen_word)
+                print("Improved: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
 
 
     answer_buffer.append(' '.join(line_answer_buffer))
