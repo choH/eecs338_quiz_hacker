@@ -40,16 +40,25 @@ for i in raw_word_list:
 # print(json.dumps(raw_word_dict, indent=4))
 
 
+def if_reserve_word_valid (tar, reseve):
+    for i, j in zip(tar, reseve):
+        if i != '_' and j != '_':
+            if i != j:
+                return False
+    return True
 
-def get_match_list(tar, reserve_list=None, thld=0.60):
+def get_match_list(tar, reserve_list=None, thld=0.6):
     reserve_list = raw_word_dict[len(tar)] if reserve_list is None else reserve_list
     reserve_match_dict = {}
     for a_q_reserve in reserve_list:
         reserve_match_dict[a_q_reserve] = difflib.SequenceMatcher(None, tar, a_q_reserve).ratio()
     # print(sorted(reserve_match_dict.items(), key=lambda kv: kv[1])[::-1])
     sorted_q_reserve = [i[0] for i in sorted(reserve_match_dict.items(), key=lambda kv: kv[1])[::-1] if i[1] >= thld]
+    sorted_q_reserve = [i for i in sorted_q_reserve if if_reserve_word_valid(tar, i)]
     del sorted_q_reserve[0]
-    # print(sorted_q_reserve)
+    # if tar == 'list_':
+    #     print(sorted_q_reserve)
+
     return sorted_q_reserve
 
 def try_fill_word(tar, reserve_list=None):
@@ -107,5 +116,11 @@ for a_q_line in q_line_list:
 
     answer_buffer.append(' '.join(line_answer_buffer))
 
+complete_filled_word_amount = 0;
 for i, j in zip(q_line_list, answer_buffer):
-    print("{:>30} {} --> {} {}".format(i, ' '*3, ' '*3, j))
+    if '_' not in j:
+        complete_filled_word_amount += 1;
+        print("{:>32} {} --> {} {}".format(i, ' '*3, ' '*3, j))
+    else:
+        print("{}{:>30} {} --> {} {}".format(str(j.count('_')).zfill(2), i, ' '*3, ' '*3, j))
+print("Filled word: {} / {}".format(complete_filled_word_amount, len(q_line_list)))
