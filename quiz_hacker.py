@@ -96,6 +96,33 @@ def try_fill_with_textbook(tar, thld=0.5):
     else:
         return textbook_filled_word
 
+def hypen_word_filler(hypen_tar, reserve_list='raw', thld=0.5):
+
+    hypen_tar = filled_word
+    if '-' in filled_word and '_' in filled_word:
+        hypen_word_token_list = filled_word.split('-')
+        hypen_word_token_buffer = []
+        for i in hypen_word_token_list:
+            if reserve_list is 'raw':
+                reserve_list = raw_word_dict[len(i)]
+                filled_hypen_word_portion = try_fill_word(i, reserve_list, thld)
+            else:
+                filled_hypen_word_portion = try_fill_with_textbook(i, thld)
+            hypen_word_token_buffer.append(filled_hypen_word_portion)
+        filled_hypen_word = "-".join(hypen_word_token_buffer)
+
+        if filled_hypen_word.count('_') < filled_word.count('_'):
+            return filled_hypen_word
+            # print("Improvement: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
+        else:
+            if not filled_hypen_word == filled_word:
+                # del line_answer_buffer[-1]
+                hypen_word_underline_index_list = [i for (i, x) in enumerate(filled_word) if x == '_']
+                for i in hypen_word_underline_index_list:
+                    if filled_hypen_word[i] != '_':
+                        filled_word[i] =  filled_hypen_word[i]
+                filled_hypen_word = filled_word
+            return filled_hypen_word
 
 
 answer_buffer = []
