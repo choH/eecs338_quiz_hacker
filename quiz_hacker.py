@@ -1,8 +1,9 @@
 import json
 import difflib
+import textbook_tokenizer as tk
 
-
-last_name_first_vowel = 'O'
+# last_name_first_vowel = 'O'
+last_name_first_vowel = None
 
 
 def OS_quiz_tokenizer(input_filename, vowel=None):
@@ -55,16 +56,18 @@ def get_match_list(tar, reserve_list=None, thld=0.6):
     # print(sorted(reserve_match_dict.items(), key=lambda kv: kv[1])[::-1])
     sorted_q_reserve = [i[0] for i in sorted(reserve_match_dict.items(), key=lambda kv: kv[1])[::-1] if i[1] >= thld]
     sorted_q_reserve = [i for i in sorted_q_reserve if if_reserve_word_valid(tar, i)]
-    del sorted_q_reserve[0]
+    if sorted_q_reserve:
+        if tar == sorted_q_reserve[0]:
+            del sorted_q_reserve[0]
     # if tar == 'list_':
     #     print(sorted_q_reserve)
 
     return sorted_q_reserve
 
-def try_fill_word(tar, reserve_list=None):
+def try_fill_word(tar, reserve_list=None, thld=0.6):
     reserve_list = raw_word_dict[len(tar)] if reserve_list is None else reserve_list
     underline_index_list = [i for (i, x) in enumerate(tar) if x == '_']
-    match_list = get_match_list(tar, reserve_list=reserve_list)
+    match_list = get_match_list(tar, reserve_list, thld)
     # print(match_list)
     new_tar = tar
     if match_list and underline_index_list:
@@ -80,6 +83,19 @@ def try_fill_word(tar, reserve_list=None):
     else:
         return new_tar
 
+textbook_reseve_list = tk.OS_textbook_tokenizer('textbook.txt')
+textbook_word_len_set = {len(i) for i in textbook_reseve_list}
+textbook_word_dict = {i:[] for i in textbook_word_len_set}
+for i in textbook_reseve_list:
+    textbook_word_dict[len(i)].append(i)
+
+def try_fill_with_textbook(tar, thld=0.5):
+    textbook_filled_word = try_fill_word(tar, textbook_word_dict[len(tar)], thld)
+    if '_' in textbook_filled_word:
+        return tar
+    else:
+        return textbook_filled_word
+
 
 
 answer_buffer = []
@@ -88,30 +104,22 @@ for a_q_line in q_line_list:
     line_answer_buffer = []
     for a_q_word in a_q_word_list:
         filled_word = try_fill_word(a_q_word)
-        line_answer_buffer.append(filled_word)
 
+        # print(filled_word)
         if '-' in filled_word and '_' in filled_word:
-            hypen_word_token_list = filled_word.split('-')
-            hypen_word_token_buffer = [];
-            for i in hypen_word_token_list:
-                filled_hypen_word_portion = try_fill_word(i)
-                hypen_word_token_buffer.append(filled_hypen_word_portion)
-            filled_hypen_word = "-".join(hypen_word_token_buffer)
+            filled_hypen_word = hypen_word_filler(filled_word, thld=0.5)
+            filled_word = filled_hypen_word
 
-            if filled_hypen_word.count('_') < filled_word.count('_'):
-                del line_answer_buffer[-1]
-                line_answer_buffer.append(filled_hypen_word)
-                # print("Improvement: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
-            else:
-                if not filled_hypen_word == filled_word:
-                    del line_answer_buffer[-1]
-                    hypen_word_underline_index_list = [i for (i, x) in enumerate(filled_word) if x == '_']
-                    for i in hypen_word_underline_index_list:
-                        if filled_hypen_word[i] != '_':
-                            filled_word[i] =  filled_hypen_word[i]
-                    line_answer_buffer.append(filled_word)
-                    # print("Collation Improvement: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
-                # print("No Improvement: {} --> {} --> {}".format(a_q_word, filled_word, filled_hypen_word))
+        # print(filled_word)
+        # print('\n')
+        if '-' in filled_word and '_' in filled_word:
+            filled_hypen_word = hypen_word_filler(filled_word, 'textbook', thld=0.5)
+            filled_word = filled_hypen_word
+        else:
+            textbook_filled_word = try_fill_with_textbook(filled_word, thld=0.5)
+            filled_word = textbook_filled_word
+
+        line_answer_buffer.append(filled_word)
 
 
     answer_buffer.append(' '.join(line_answer_buffer))
@@ -123,4 +131,4 @@ for i, j in zip(q_line_list, answer_buffer):
         print("{:>32} {} --> {} {}".format(i, ' '*3, ' '*3, j))
     else:
         print("{}{:>30} {} --> {} {}".format(str(j.count('_')).zfill(2), i, ' '*3, ' '*3, j))
-print("Filled word: {} / {}".format(complete_filled_word_amount, len(q_line_list)))
+print("Filled word: {} / {} ({:.3f}%)".format(complete_filled_word_amount, len(q_line_list), (complete_filled_word_amount / len(q_line_list)) * 100))
