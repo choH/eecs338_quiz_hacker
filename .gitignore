@@ -1,0 +1,5 @@
+__pycache__/
+textbook_tokenized*
+textbook.txt
+.DS_Store
+pg*
