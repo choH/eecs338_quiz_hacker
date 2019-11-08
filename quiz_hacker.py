@@ -40,8 +40,8 @@ for i in raw_word_list:
 # print(json.dumps(raw_word_dict, indent=4))
 
 
-def if_reserve_word_valid (tar, reseve):
-    for i, j in zip(tar, reseve):
+def if_reserve_word_valid (tar, reserve):
+    for i, j in zip(tar, reserve):
         if i != '_' and j != '_':
             if i != j:
                 return False
