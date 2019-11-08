@@ -2,8 +2,8 @@ import json
 import difflib
 import textbook_tokenizer as tk
 
-# last_name_first_vowel = 'O'
-last_name_first_vowel = None
+last_name_first_vowel = 'O'
+# last_name_first_vowel = None
 
 
 def OS_quiz_tokenizer(input_filename, vowel=None):
@@ -90,7 +90,10 @@ for i in textbook_reseve_list:
     textbook_word_dict[len(i)].append(i)
 
 def try_fill_with_textbook(tar, thld=0.5):
-    textbook_filled_word = try_fill_word(tar, textbook_word_dict[len(tar)], thld)
+    if len(tar) in textbook_word_dict.keys():
+        textbook_filled_word = try_fill_word(tar, textbook_word_dict[len(tar)], thld)
+    else:
+        return tar
     if '_' in textbook_filled_word:
         return tar
     else:
