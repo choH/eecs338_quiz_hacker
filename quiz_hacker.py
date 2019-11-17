@@ -2,14 +2,16 @@ import json
 import difflib
 import textbook_tokenizer as tk
 
-last_name_first_vowel = 'O'
-# last_name_first_vowel = None
+# last_name_first_vowel = 'O'
+# last_name_first_vowel = 'Placeholder'
+last_name_first_vowel = None
+# last_name_first_vowel = 'All'
 
 
 def OS_quiz_tokenizer(input_filename, vowel=None):
     if vowel is not None:
         vowel = vowel.upper()
-        vowel_list = ['A', 'E', 'I', 'O', 'U', 'Y']
+        vowel_list = ['A', 'E', 'I', 'O', 'U', 'Y', 'ALL']
         if vowel not in vowel_list:
             print("{} is not a proper vowel.".format(vowel))
             return -1
@@ -20,7 +22,9 @@ def OS_quiz_tokenizer(input_filename, vowel=None):
     word_list = []
     with open(input_filename) as input_file:
         for i in input_file:
-            if i.split(' ')[0] == vowel or vowel == None:
+            if i.split(' ')[0] == vowel or vowel == 'ALL' or vowel == None:
+                if vowel == None:
+                    i = 'P ' + i
                 line_list.append(i.split('\n')[0].split(' ', 1)[-1])
                 word_list.extend(i.split('\n')[0].split(' ', 1)[-1].split())
     for i in word_list:
@@ -158,7 +162,7 @@ complete_filled_word_amount = 0;
 for i, j in zip(q_line_list, answer_buffer):
     if '_' not in j:
         complete_filled_word_amount += 1;
-        print("{:>32} {} --> {} {}".format(i, ' '*3, ' '*3, j))
+        print("{:>42} {} --> {} {}".format(i, ' '*3, ' '*3, j))
     else:
-        print("{}{:>30} {} --> {} {}".format(str(j.count('_')).zfill(2), i, ' '*3, ' '*3, j))
+        print("{}{:>40} {} --> {} {}".format(str(j.count('_')).zfill(2), i, ' '*3, ' '*3, j))
 print("Filled word: {} / {} ({:.3f}%)".format(complete_filled_word_amount, len(q_line_list), (complete_filled_word_amount / len(q_line_list)) * 100))
