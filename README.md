@@ -13,7 +13,15 @@ The content is intend for and only for the private use of the author, its GitHub
 
 1. Copy and paste the quiz content into `input.txt`.
 2. Modify the value of `last_name_first_vowel` in `quiz_hacker.py` as you desired (as type `str`).
-3. `cd` into the working directory of *EECS 338 Quiz Hacker*, then run the following command in the terminal:
+3. Paste a plain text copy of your textbook into `textbook.txt`. In the case of EECS 338, we use [Operating System Concepts (Ninth Edition) by Silberschatz, Galvin, and Gagne](http://os-book.com/OS9/index.html), but it should be compatible with any source.
+4. `cd` into the working directory of *EECS 338 Quiz Hacker*.
+5. Run the following command to avoid synchronizing the content within `textbook.txt` to GitHub, for copyright concerns.
+
+```
+git update-index --assume-unchanged textbook.txt
+```
+
+6. Run the following command in the terminal:
 
 ```
 python3 quiz_hacker.py
