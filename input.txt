@@ -1,89 +1,112 @@
-A b_ock numbe_
-A c_ntrol bl___
-A cons_stency checki_g
-A contig_ous all_cat_o_
-A director_ _ntr_e_
-A disk-h_ad se__s
-A _em_orary _cce__
-A fi_st _lock
-A in_er_al _ragmentatio_
-A _oun_ poin_
-A pat_-name _ra_slatio_
-A re_ative b_oc_
-A remote di_ector_
-A __scadin_ mount_
-A secon_ary s_or_g_
-A synchrono_s w_ite_
-A tree-structu_ed dir_ctorie_
-A unif_ed buffer _ac__
-A unused b_oc_
-A _urrent _irector_
-A u_u__d memor_
-E dire__ acc_s_
-E direct_ry _ntr_
-E __ffer cach_
-E file-orga_iz_tion module
-E file-syst_m metadat_
-E fr_e-block po_nter_
-E free-sp_ce managemen_
-E i_dex b__c_
-E ino_e blo__
-E linked a_loca_io_
-E _onsisten_y semantics
-E physi_al blo___
-E remote-file-system p_otoco_
-E se_ue_tial-_cce_s files
-E sh_red f_l__
-E sy_b_lic links
-E temperature _xtreme_
-E trans_er r_tes
-E write perm__sio_
-I access c_ntr__
-I c_ntiguous _pac_
-I directory str_ct___
-I i_o_e num_e_
-I metadata up_at_s
-I m_m__y mappin_
-I mounted direc__r_
-I multi_ev_l direct_r_
-I multilevel direc_ory struct___
-I phy__cal bloc_
-I p_otection mechani_ms
-I ra_dom access
-I __rbage coll_ctio_
-I __s_em fil__
-I sequential _ccess
-I singl_-leve_ dir_ctory
-I virtual memor_ tec_niques
-O _ab_e en_r_
-O access-cont_ol list_
-O cached a_trib_te_
-O _cce_s r__ht_
-O director_ structure_
-O __ee-sp_ce ma_age_
-O fi_e-system imple_entation
-O files and subdirect_ries
-O i_d__ed all_catio_
-O _llo_ation met_od_
-O logical recor_
-O sy_tem-wi_e open-file
-O tw_-_evel directory
-O u__ated _etad_t_
-O v_rtual _e_or_
-U/Y contiguous _hun_
-U/Y conti___us block_
-U/Y _eads and writes
-U/Y external fragme_tatio_
-U/Y files a__ directorie_
-U/Y file-_ystem int__face
-U/Y incr_me_tal backup
-U/Y logic_l records
-U/Y mount _p_rati_n
-U/Y __ndom wri_es
-U/Y __ode s_ructur_
-U/Y op_n-file table e_try
-U/Y relative bl_ck numb_r
-U/Y _rite p_int__
-U/Y ___tection schem_
-U/Y tree-structured d_r_ctory
-U/Y two-level dire__ory structure
+A acqui_ition and _ele_se
+A _a_ety __ndit__n
+A ato_ic hardw_re _nst_u_tion
+A circu_ar-___t sche_e
+A dining-philos_p_ers p__b_em
+A ___dl_cked st_te
+A _equ_re mutuall_ _xc_usive acc_ss
+A _irst kno__ co_rect s_ftware sol_tion
+A lock-order verif_er
+A locks and _emap_ores
+A ma__i_ _efines
+A m_tex _oc_s
+A ne_ess__y _o_ditio_
+A num_er of _v_ilable res__r_es
+A p_oduc_r c_nsumer pro_lem
+A prod_c_r a_d cons_mer _hre_ds
+A pro_ess sy__h_onizati_n
+A reque_t and r_lea_e r___urces
+A sa_ety cr_te_ia
+A _s_mm_t_ic __lu_ion
+A spins while wait__g
+A suf_i_ient _ondi_i_n
+A ___ter l_cking mec_anism
+A _v_ila_le re__urces by cou_t
+E a_a_t_ve mutex _o_k_
+E _afe_y re_u__ement
+E a_oid d_a__oc_s
+E a_quir_ng th__ad
+E b_n_ry _e___hores
+E b_rrie_ po_n_
+E d_adlock si_uation
+E d_cr_a_e count
+E de__lock-_et_ction _lgor_thm
+E _ecessar_ c_nd_tions
+E _em_p___e mute_
+E _es_urc_-all_c_tion grap_
+E _ev_r ent_r
+E exi_tence of _e_d__ck
+E future requ_sts and re__a_e_
+E _ict_m _e__c_ion
+E l_cking _ec__nism
+E __od_ce_ pr_c_ss
+E p___ect cr_tic_l sect_ons
+E re_o_er_ m_t_ods
+E req_e_ts and releases
+E _r_ority i_ve__ion
+E sha_abl_ re_o_rce
+E _ut_x s_ma_hore
+E ____va_ion si_ua_ion
+E wri_er _oc_s
+E y__lds __nt__l
+I __c_ing _ech_nism_
+I cir_u_ar-_a_t con_i_ion
+I _cquir__ _utex
+I cr_tical __gio_s
+I mu_ex loc_s a_d s_maphores
+I _n__fe stat_s
+I philosop___ n_mbe_
+I p__re_d m_t_x
+I preventi__ d_ad_ocks
+I p_s_i_ility __ deadloc_s
+I req_e_t reso_r_e_
+I resourc_s _ur_e___y allocated
+I run_ime o__rhe_ds
+I unsafe s_at_
+I _ynchroniza__on pr_mit_v_s
+O __adlock p_eventio_
+O algori__m sati_fies
+O allocatio_ o_ chopst_cks
+O __arant_eing atomicity
+O at__ic oper__ions
+O atom_c _ardw___
+O _axi_um needs
+O co_dition va__abl_s
+O deadloc_ c_cl_
+O deadlock avo_da_c_
+O _hil_ _tt_m_ti_g
+O m__imum de_an_
+O ____mum _um_e_
+O mutu_l e_cl_s__n
+O __nchronizatio_ scheme
+O _o_d-and-_ai_ con_ition
+O __oduce_ _n_ consum_r proce__es
+O _oftw_r_ s_lution
+O _ont_ carlo te_h_iq__
+O re__urc_ preemption
+O starv_tio_-_ree solutio__
+O synchronizat_o_ mec___is_s
+O _ut__ un_oc_
+U/Y bo_nded-waiting r__uirem_nt
+U/Y __che coher__c_
+U/Y coun_i_g sema_h_re_
+U/Y critica_ secti__
+U/Y ____d allo_ __her _rocesse_
+U/Y deadloc_ed _roc_sses
+U/Y deadlock ch___cte__zati_n
+U/Y dead_ocks n_ve_
+U/Y de__loc_ _ete___on
+U/Y d_ning-phi_osopher_ probl_m
+U/Y mut_al-_x__usio_ __qu_rement
+U/Y mute_ unlo_k
+U/Y mutex loc_s
+U/Y ori_in_l priorit_
+U/Y _ound_d _uffe_
+U/Y p_even_ dea___ck
+U/Y rel_ase reso_rce_
+U/Y re_our__ graph
+U/Y re_uest_ng an_ rel_asing re__ur_es
+U/Y _r_ven_ _eadlocks
+U/Y sem_ph_re _a__e
+U/Y s_s___ t__oughput
+U/Y _vo__ing deadlocks
